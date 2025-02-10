@@ -174,17 +174,11 @@ mse = mean_squared_error(y_test_original, y_pred_original)
 rmse = np.sqrt(mse)
 mae = mean_absolute_error(y_test_original, y_pred_original)
 mbe = np.mean(y_test_original - y_pred_original)
-nrmse = rmse / (np.max(y_test_original) - np.min(y_test_original))
-r2 = r2_score(y_test_original, y_pred_original)
-evs = explained_variance_score(y_test_original, y_pred_original)
 
 print("Mean Squared Error (MSE):", mse)
 print("Root Mean Squared Error (RMSE):", rmse)
 print("Mean Absolute Error (MAE):", mae)
 print("Mean Bias Error(MBE):", mbe)
-print("NRMSE:", nrmse)
-print("Explained Variance Score (EVS):", evs)
-print("R² Score:", r2)
 
 # 绘制预测结果
 plt.figure(figsize=(25, 10))
@@ -206,14 +200,3 @@ plt.ylabel('Value')
 plt.title('Actual vs. Predicted Data')
 plt.savefig('actual_vs_predicted_zoomed.png')  # 保存局部预测结果图像
 plt.show()
-
-
-"""
-Mean Squared Error (MSE): 0.0935135431663275
-Root Mean Squared Error (RMSE): 0.3057998416715213
-Mean Absolute Error (MAE): 0.1543773782588919
-Mean Bias Error(MBE): 0.011242752618148544
-NRMSE: 0.057711882375993825
-Explained Variance Score (EVS): 0.9581515790284819
-R² Score: 0.958085628910363
-"""
